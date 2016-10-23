@@ -12,10 +12,10 @@ Features
 ---------
 
 Feature list:
-	-entry of new items
-	-generating printable labels for new items
-	-keeping track of past lending for each item
-	-item browsing
-	-item status indication (available/borrowed)
-	-statistical data representation
+*item entry of new items
+*item generating printable labels for new items
+*item keeping track of past lending for each item
+*item item browsing
+*item item status indication (available/borrowed)
+*item statistical data representation
 
