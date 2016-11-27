@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+	<!--implement min-margin as an aditional <div>-->
 	<head>
 		<meta charset="utf-8">
 		<title>Library</title>
@@ -14,11 +15,11 @@
 				</ul>
 			</div>
 			<div class="fifthR" id="user-info-div">
-				<div class="fifthL" id="user-info">
+				<div id="user-info">
 					Welcome!<br>
 					<h3>Genovefa</h3>
 				</div>
-				<div class="fifthR" id="profile-picture-div">
+				<div id="profile-picture-div">
 					<img id="profile-picture" alt="Your profile picture!" src="pics/profilePicture.jpg"/>
 				</div>								
 			</div>
@@ -29,22 +30,22 @@
 			</div>
 			<div class="fifthR" id="sidebar">
 				<div id="menu">
-					<button id="home">HOME</button>
-					<button id="books">BOOKS</button>
-					<button id="users">USERS</button>
-					<button id="leases">LEASES</button>
+					<button id="homeButton">HOME</button>
+					<button id="booksButton">BOOKS</button>
+					<button id="usersButton">USERS</button>
+					<button id="leasesButton">LEASES</button>
 				</div>
 				<div id="side-boxes">
 					<div id="active-message-div">
-						<h3>Active message:</h3><br>
-						<textarea>
+						Active message:<br>
+						<textarea id="active-message">
 							Library will be closed from 24.12.2016 untill 2.1.2017 due to vacation!
 						</textarea>
+						<button id="confirmActiveMessage">OK</button>
 					</div>
 				</div>
 			</div>		
 		</div>
-			
 		
 	</body>
 </html>

@@ -1,46 +1,81 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Library</title>
-		<link rel="stylesheet" type="text/css" href="styles.css">
-	</head>
-	<body>
-		<div id="div-top">
-			<div id="message-board-div"><!--Make it scrollable ->CSS-->
-				<ul>
-					<li><b>Warning:&emsp</b>27.10.2016&emsp<i>Matej Breskvar's lease of "Captain America" has just expired</i></li>
-					<li><b>Warning:&emsp</b>26.10.2016&emsp<i>Joze Dolenc's lease of "The Coockbook" has just expired</i></li>
-				</ul>
-			</div>
-			<div id="user-info-div">
-				Welcome!</br>
-				<h4>Genovefa</h4>
-				
-			</div>
+<head>
+	<meta charset="utf-8">
+	<title>Library</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<div id="div-top">
+	<div class="fifthL" id="message-board-div"><!--Make it scrollable ->CSS-->
+		<ul>
+			<li><b>Warning:	</b>27.10.2016	<i>Matej Breskvar's lease of "Captain America" has just expired</i></li>
+			<li><b>Warning:	</b>26.10.2016	<i>Joze Dolenc's lease of "The Coockbook" has just expired</i></li>
+		</ul>
+	</div>
+	<div class="fifthR" id="user-info-div">
+		<div id="user-info">
+			Welcome!<br>
+			<h3>Genovefa</h3>
 		</div>
-		<div id="div-bottom">
-			<div id="content">
-				
-			</div>
-			<div id="sidebar">
-				<div id="menu">
-					<button id="home">HOME</button>
-					<button id="books">BOOKS</button>
-					<button id="users">USERS</button>
-					<button id="leases">LEASES</button>
-				</div>
-				<div id="side-boxes">
-					<div id="active-message-div">
-						<h3>Active message:<h3></br>
-						<textarea>
+		<div id="profile-picture-div">
+			<img id="profile-picture" alt="Your profile picture!" src="pics/profilePicture.jpg"/>
+		</div>
+	</div>
+</div>
+<div id="div-bottom">
+	<div class="fifthL" id="content">
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>user</th>
+				<th>book</th>
+				<th>expiration date</th>
+				<th>active?</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>mbre: Matej Breskvar</td>
+				<td>3 Ed Brubaker Captain America, Vol. 1</td>
+				<td>21.11.2016</td>
+				<td><input id="ls1" type="checkbox" checked="checked"></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>jdol: Joze Dolenc</td>
+				<td>4 William Powell: The Anarchist Cookbook</td>
+				<td>23.11.2016</td>
+				<td><input id="ls2" type="checkbox" checked="checked"></td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>jdol: Joze Dolenc</td>
+				<td>2 Eoin Colfer: Artemis Fowl</td>
+				<td>22.12.2016</td>
+				<td><input id="ls3" type="checkbox" checked="checked"></td>
+			</tr>
+		</table>
+        <br>
+        <button class="tableButton" id="newLeaseButton">+New lease</button>
+	</div>
+	<div class="fifthR" id="sidebar">
+		<div id="menu">
+			<button id="homeButton">HOME</button>
+			<button id="booksButton">BOOKS</button>
+			<button id="usersButton">USERS</button>
+			<button id="leasesButton">LEASES</button>
+		</div>
+		<div id="side-boxes">
+			<div id="active-message-div">
+				Active message:<br>
+				<textarea id="active-message">
 							Library will be closed from 24.12.2016 untill 2.1.2017 due to vacation!
 						</textarea>
-					</div>
-				</div>
-			</div>		
+				<button id="confirmActiveMessage">OK</button>
+			</div>
 		</div>
-			
-		
-	</body>
+	</div>
+</div>
+
+</body>
 </html>
