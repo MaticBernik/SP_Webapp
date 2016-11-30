@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Library</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <!--<script type="text/javascript" src="script/leasesUser.js" defer></script>-->
 </head>
 <body>
 <div id="div-top">
@@ -45,17 +46,14 @@
     </div>
     <div class="fifthR" id="sidebar">
         <div id="menu">
-            <button id="booksButton">BOOKS</button>
-            <button id="leasesButton">LEASES</button>
+            <a href="books-user.html">
+                <button id="booksButton">BOOKS</button>
+            </a>
+            <a href="leases-user.html">
+                <button class="active" id="leasesButton">LEASES</button>
+            </a>
         </div>
         <div id="side-boxes">
-            <div id="active-message-div">
-                Active message:<br>
-                <textarea id="active-message">
-							Library will be closed from 24.12.2016 untill 2.1.2017 due to vacation!
-						</textarea>
-                <button id="confirmActiveMessage">OK</button>
-            </div>
         </div>
     </div>
 </div>
