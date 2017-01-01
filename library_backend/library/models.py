@@ -20,7 +20,7 @@ class Book(models.Model):
 	#book_id --> ze po defaultu
 	title = models.CharField(max_length=100, null=False)
 	added_date = models.DateTimeField(default=datetime.now())
-	author = models.ForeignKey(Author,on_delete=models.SET_NULL)
+	author = models.ForeignKey(Author,on_delete=models.SET_NULL,null=True)
 	genre = models.CharField(max_length=10)
 
 class Lease(models.Model):
