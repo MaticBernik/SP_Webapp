@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Library</title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+        <script type="text/javascript" src="script/index.js" defer></script>
+	</head>
+	<body>
+		<div id="login-div">
+			<div id="login-div-left">
+				<form id="login-form"  method="post" action="{% url auth:login %}">
+					{% csrf_token %}
+					Username:<br>
+					<input id="usernameField" type="text" name="username"/><br>
+					<!--Password:<br>-->
+					{{ form.password.label_tag }}<br>
+					{{ form.password }}
+					<input id="passwordField" type="password" name="password"/><br>
+					<input id="loginButton" type="submit" value="Login"/>
+				</form>
+			</div>
+			<div id="register-div">
+				Not a member yet?
+				<a href="library/register">
+					<button id="register">Register</button>
+				</a>
+                <div id="info">
+					{% if info %}
+						{{info}}
+					{% endif %}
+				</div>
+			</div>
+			<div id="login-div-right">
+				 <img id="books" alt="books" src="pics/books1.jpg"/>
+			</div>
+		</div>
+	</body>
+</html>

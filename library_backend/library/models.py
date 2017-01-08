@@ -21,7 +21,8 @@ class Book(models.Model):
 	title = models.CharField(max_length=100, null=False)
 	added_date = models.DateTimeField(default=datetime.now())
 	author = models.ForeignKey(Author,on_delete=models.SET_NULL,null=True)
-	genre = models.CharField(max_length=10)
+	genre = models.CharField(max_length=10,null=True)
+	available = models.BooleanField(default=True)
 
 class Lease(models.Model):
 	#lease_id  --> ze po defaultu
