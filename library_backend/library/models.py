@@ -16,6 +16,9 @@ class Author(models.Model):
 	firstName=models.CharField(max_length=100, null=False)
 	lastName=models.CharField(max_length=100, null=False)
 
+	def __str__(self):
+		return self.firstName+' '+self.lastName
+
 class Book(models.Model):
 	#book_id --> ze po defaultu
 	title = models.CharField(max_length=100, null=False)
@@ -24,9 +27,15 @@ class Book(models.Model):
 	genre = models.CharField(max_length=10,null=True)
 	available = models.BooleanField(default=True)
 
+	def __str__(self):
+		return self.author.firstName+' '+self.author.lastName+': '+self.title
+
 class Lease(models.Model):
 	#lease_id  --> ze po defaultu
 	user_id= models.ForeignKey(User,on_delete=models.CASCADE) 
 	book_id= models.ForeignKey(Book,on_delete=models.CASCADE)
 	start_date= models.DateTimeField(default=datetime.now())
 	expiration_date = models.DateTimeField(default=datetime.now() + timedelta(days=14))
+
+	def __str__(self):
+		return self.start_date+': '+self.user_id.first_name+' '+self.user_id.last_name+' - '+self.book_id.title
