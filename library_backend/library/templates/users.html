@@ -32,27 +32,24 @@
 	<div class="fifthL" id="content">
 		<table>
 			<tr>
-				<th>ID</th>
-				<th>user</th>
-				<th>book</th>
-				<th>expiration date</th>
-				<th>active?</th>
+				<th>username</th>
+				<th>first name</th>
+				<th>last name</th>
+				<th>email</th>
+				<th>last login</th>
 			</tr>
-			{% if books_list %}
-				{% for book in books_list %}
+			{% if users_list %}
+				{% for user in users_list %}
 					<tr>
-						<td>{{book.id}}</td>
-						<td>{{book.title}}</td>
-						<td>{{book.author.firstName}} {{book.author.lastName}}</td>
-						<td>{% if book.available %} available {% else %} leased {% endif %}</td>
-						<!--visible only to librarian-->
-						<td><input id="cb2" type="checkbox" checked="checked"></td>
+						<td>{{user.username}}</td>
+						<td>{{user.first_name}}</td>
+						<td>{{user.last_name}}</td>
+						<td>{{user.email}}</td>
+						<td>{{user.last_login}}</td>
 					</tr>
 				{% endfor %}
 			{% endif %}
 		</table>
-        <br>
-        <button class="tableButton" id="newBookButton">+New book</button>
 	</div>
 	<div class="fifthR" id="sidebar">
 		<div id="menu">
@@ -60,10 +57,10 @@
 				<button id="homeButton">HOME</button>
 			</a>
 			<a href="../books">
-				<button class="active" id="booksButton">BOOKS</button>
+				<button id="booksButton">BOOKS</button>
 			</a>
 			<a href="../users">
-				<button id="usersButton">USERS</button>
+				<button class="active" id="usersButton">USERS</button>
 			</a>
 			<a href="../leases">
 				<button id="leasesButton">LEASES</button>

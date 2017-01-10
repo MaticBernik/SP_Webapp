@@ -9,9 +9,8 @@
 <body>
 <div id="login-div">
     <div id="login-div-left">
-        <form id="registration-form" action="testni.streznik.org/registracija" method="post">
-		{% csrf_token %}
-		{{ registerForm.as_table }}
+        <form id="registration-form" action="." method="post">
+		    {% csrf_token %}
             First name:<br>
             <input type="text" name="firstName"/><br>
             Last name:<br>
@@ -19,21 +18,17 @@
             Address:<br>
             <input type="text" name="address"/><br>
             <br>
-            Username:<br>
-            <input type="text" name="username"/><br>
-            Password:<br>
-            <input type="password" name="password"/><br>
-            <br>
+            {{form}}
             <input type="submit" value="Register"/>
         </form>
     </div>
     <div id="register-div">
-        <a href="index.html">
+        <a href="/library/">
             <button id="register">Back</button>
         </a>
     </div>
     <div id="login-div-right">
-        <img id="books" alt="books" src="pics/books1.jpg"/>
+        <img id="books" alt="books" src="{% static 'library/pics/books1.jpg' %}"/>
     </div>
 </div>
 </body>

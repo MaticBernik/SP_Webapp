@@ -11,14 +11,16 @@
 			<div id="login-div-left">
 				<form id="login-form"  method="post" action="/library/">
 					{% csrf_token %}
-					{{ loginForm.as_table }}
+					{{ loginForm }}
 					<input id="loginButton" type="submit" value="Login"/>
 				</form>
 			</div>
 			<div id="register-div">
 				Not a member yet?
 				<a href="register/">
-					<button id="register">Register</button>
+					<form action="register/">
+    					<input id="register" value="Register" type="submit" />
+					</form>
 				</a>
                 <div id="info">
 					{% if info %}
@@ -27,7 +29,7 @@
 				</div>
 			</div>
 			<div id="login-div-right">
-				 <img id="books" alt="books" src="pics/books1.jpg"/>
+				 <img id="books" alt="books" src="{% static 'library/pics/books1.jpg' %}"/>
 			</div>
 		</div>
 	</body>

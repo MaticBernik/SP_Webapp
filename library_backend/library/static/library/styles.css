@@ -98,7 +98,7 @@ div.fifthR{
     width: 100%;
     background-color: antiquewhite;
 }
-#menu>button{
+#menu>a>button{
     width: 100%;
     height: 25%;
     min-height: 30px;

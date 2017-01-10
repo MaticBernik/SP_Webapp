@@ -1,10 +1,23 @@
 from django.conf.urls import url
+from django.views.generic.edit import CreateView
+from django.contrib.auth.forms import UserCreationForm
+from django.conf.urls import include,url
+
 
 from . import views
 
 urlpatterns = [
     url(r'books/$', views.books, name='books'),
     url(r'^$', views.index, name='index'),
-    url(r'login/$',views.login,name="login")
+    url(r'login/$',views.login,name="login"),
+    url(r'home/$',views.home,name="home"),
+    url(r'users/$',views.users,name="users"),
+    url(r'leases/$',views.leases,name="leases"),
+    url(r'^register/', CreateView.as_view(
+            template_name='register.html',
+            form_class=UserCreationForm,
+            success_url='/'
+    )),
+    url('^accounts/', include('django.contrib.auth.urls')),
 
 ]

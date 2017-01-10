@@ -38,4 +38,4 @@ class Lease(models.Model):
 	expiration_date = models.DateTimeField(default=datetime.now() + timedelta(days=14))
 
 	def __str__(self):
-		return self.start_date+': '+self.user_id.first_name+' '+self.user_id.last_name+' - '+self.book_id.title
+		return str(self.start_date)+': '+self.user_id.first_name+' '+self.user_id.last_name+' - '+self.book_id.title

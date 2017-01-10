@@ -1,0 +1,12 @@
+{% extends "rango/base.html" %}
+
+<script type='text/javascript'>
+	window.setTimeout(function(){
+ 	       window.location.href = "/library";
+  	  }, 5000);
+	document.write("You will be redirected to login page in 5 seconds.");
+</script>
+{% block body_block %}
+<h1>Logged Out</h1>
+        <p>You are now logged out.</p>
+{% endblock %}
