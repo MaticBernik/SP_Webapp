@@ -33,10 +33,14 @@
 		<table>
 			<tr>
 				<th>ID</th>
-				<th>user</th>
 				<th>book</th>
-				<th>expiration date</th>
-				<th>active?</th>
+				<th>author</th>
+				<th>status</th>
+				{% if role == 'Librarian' %}
+					<th>active?</th>
+				{% elif role == 'User' %}
+					<th>reservation</th>
+				{% endif %}
 			</tr>
 			{% if books_list %}
 				{% for book in books_list %}
@@ -44,9 +48,16 @@
 						<td>{{book.id}}</td>
 						<td>{{book.title}}</td>
 						<td>{{book.author.firstName}} {{book.author.lastName}}</td>
-						<td>{% if book.available %} available {% else %} leased {% endif %}</td>
-						<!--visible only to librarian-->
-						<td><input id="cb2" type="checkbox" checked="checked"></td>
+						<td>{% if book.available %} available {% else %} leased or reserved {% endif %}</td>
+						{% if role == 'Librarian' %}
+							<td><input id="cb2" type="checkbox" checked="checked"></td>
+						{% elif role == 'User' %}
+							<td>
+								<form id="reserveForm{{book.id}}" action="reserve/{{book.id}}/" method="post">
+									<input id="reserveButton{{book.id}}" type="submit" value="Reserve" {% if not book.available %}disabled{% endif %}/>
+								</form>
+							</td>
+						{% endif %}
 					</tr>
 				{% endfor %}
 			{% endif %}
@@ -56,15 +67,19 @@
 	</div>
 	<div class="fifthR" id="sidebar">
 		<div id="menu">
-			<a href="../home">
-				<button id="homeButton">HOME</button>
-			</a>
+			{% if role == 'Librarian' %}
+				<a href="../home">
+					<button id="homeButton">HOME</button>
+				</a>
+			{% endif %}
 			<a href="../books">
 				<button class="active" id="booksButton">BOOKS</button>
 			</a>
-			<a href="../users">
-				<button id="usersButton">USERS</button>
-			</a>
+			{% if role == 'Librarian' %}
+				<a href="../users">
+					<button id="usersButton">USERS</button>
+				</a>
+			{% endif %}
 			<a href="../leases">
 				<button id="leasesButton">LEASES</button>
 			</a>

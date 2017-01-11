@@ -1,6 +1,7 @@
 from django.db import models
 from datetime import datetime,timedelta
 from django.contrib.auth.models import User
+from django.utils import timezone
 from django.contrib.auth.models import Group
 #from django.contrib.auth.models import User_Group
 
@@ -37,5 +38,27 @@ class Lease(models.Model):
 	start_date= models.DateTimeField(default=datetime.now())
 	expiration_date = models.DateTimeField(default=datetime.now() + timedelta(days=14))
 
+	def is_expired(self):
+		if self.expiration_date < timezone.now():
+			return True
+		else:
+			return False
+
 	def __str__(self):
 		return str(self.start_date)+': '+self.user_id.first_name+' '+self.user_id.last_name+' - '+self.book_id.title
+
+class Reservation(models.Model):
+	# reservation_id  --> ze po defaultu
+	user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+	book_id = models.ForeignKey(Book, on_delete=models.CASCADE)
+	start_date = models.DateTimeField(default=datetime.now())
+	expiration_date = models.DateTimeField(default=datetime.now() + timedelta(days=14))
+
+	def is_expired(self):
+		if self.expiration_date < timezone.now():
+			return True
+		else:
+			return False
+
+		def __str__(self):
+			return 'EXP:',str(self.expiration_date) + ': ' + self.user_id.first_name + ' ' + self.user_id.last_name + ' - ' + self.book_id.title

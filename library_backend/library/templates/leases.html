@@ -31,22 +31,34 @@
 	<div class="fifthL" id="content">
 		<table>
 			<tr>
-				<th>ID</th>
-				<th>user</th>
-				<th>book</th>
-				<th>start date</th>
-				<th>expiration date</th>
-				<th>active?</th>
+				{% if role == 'Librarian' %}
+					<th>ID</th>
+					<th>user</th>
+					<th>book</th>
+					<th>start date</th>
+					<th>expiration date</th>
+					<th>active?</th>
+				{% elif role == 'User' %}
+					<th>book</th>
+					<th>expiration date</th>
+					<th>expired</th>
+				{% endif %}
 			</tr>
 			{% if leases_list %}
 				{% for lease in leases_list %}
-					<tr>
-						<td>{{lease.id}}</td>
-						<td>{{lease.user_id.username}}: {{lease.user_id.first_name}} {{lease.user_id.last_name}}</td>
-						<td>{{lease.book_id.id}} {{lease.book_id.author}}: {{lease.book_id.title}}</td>
-						<td>{{lease.start_date}}</td>
-						<td>{{lease.expiration_date}}</td>
-						<td><input id="ls1" type="checkbox" checked="checked"></td>
+					<tr {% if role == 'User' and lease.is_expired %} class="expired" {% endif %}>
+						{% if role == 'Librarian' %}
+							<td>{{lease.id}}</td>
+							<td>{{lease.user_id.username}}: {{lease.user_id.first_name}} {{lease.user_id.last_name}}</td>
+							<td>{{lease.book_id.id}} {{lease.book_id.author}}: {{lease.book_id.title}}</td>
+							<td>{{lease.start_date}}</td>
+							<td>{{lease.expiration_date}}</td>
+							<td><input id="ls1" type="checkbox" {% if not lease.is_expired %}checked{% endif %}></td>
+						{% elif role == 'User' %}
+							<td>{{lease.book_id.id}} {{lease.book_id.author}}: {{lease.book_id.title}}</td>
+							<td>{{lease.expiration_date}}</td>
+							<td>{% if lease.is_expired %} yes {% else %} no {% endif %}</td>
+						{% endif %}
 					</tr>
 				{% endfor %}
 			{% endif %}
@@ -56,15 +68,19 @@
 	</div>
 	<div class="fifthR" id="sidebar">
 		<div id="menu">
-			<a href="../home">
-				<button id="homeButton">HOME</button>
-			</a>
+			{% if role == 'Librarian' %}
+				<a href="../home">
+					<button id="homeButton">HOME</button>
+				</a>
+			{% endif %}
 			<a href="../books">
 				<button id="booksButton">BOOKS</button>
 			</a>
-			<a href="../users">
-				<button id="usersButton">USERS</button>
-			</a>
+			{% if role == 'Librarian' %}
+				<a href="../users">
+					<button id="usersButton">USERS</button>
+				</a>
+			{% endif %}
 			<a href="../leases">
 				<button class="active" id="leasesButton">LEASES</button>
 			</a>
