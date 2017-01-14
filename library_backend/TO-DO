@@ -6,6 +6,7 @@ implememntiraj logging
 
 testriranje,profiliranje in zvezna integracija
 zgeneriraj dokumentacijo (sphinx)
+jenkins - dodaj skripto, ki bo po vsakem buildu naredila minify CSS in JS datotek
 
 popravi izgled form
 logout
