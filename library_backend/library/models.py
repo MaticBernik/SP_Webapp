@@ -60,5 +60,25 @@ class Reservation(models.Model):
 		else:
 			return False
 
-		def __str__(self):
-			return 'EXP:',str(self.expiration_date) + ': ' + self.user_id.first_name + ' ' + self.user_id.last_name + ' - ' + self.book_id.title
+	def __str__(self):
+		return 'EXP:'+str(self.expiration_date) + ': ' + self.user_id.first_name + ' ' + self.user_id.last_name + ' - ' + self.book_id.title
+
+class Message(models.Model):
+	text = models.CharField(max_length=200, null=False)
+
+	def __str__(self):
+		if len(self.text) > 10:
+			return self.text[:10]
+		else:
+			return self.text
+
+class Users_Messages(models.Model):
+	user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+	message_id = models.ForeignKey(Message, on_delete=models.CASCADE)
+
+	def __str__(self):
+		s=self.user_id.username+": '"
+		if len(self.message_id.text) >10:
+			return s+self.message_id.text[:10]+"'"
+		else:
+			return s+self.message_id.text+"'"

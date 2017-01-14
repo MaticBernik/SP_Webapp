@@ -1,0 +1,33 @@
+BEGIN;
+--
+-- Create model Author
+--
+CREATE TABLE "library_author" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "firstName" varchar(100) NOT NULL, "lastName" varchar(100) NOT NULL);
+--
+-- Create model Book
+--
+CREATE TABLE "library_book" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "title" varchar(100) NOT NULL, "added_date" datetime NOT NULL, "genre" varchar(10) NULL, "available" bool NOT NULL, "author_id" integer NULL REFERENCES "library_author" ("id"));
+--
+-- Create model Lease
+--
+CREATE TABLE "library_lease" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "start_date" datetime NOT NULL, "expiration_date" datetime NOT NULL, "book_id_id" integer NOT NULL REFERENCES "library_book" ("id"), "user_id_id" integer NOT NULL REFERENCES "auth_user" ("id"));
+--
+-- Create model Message
+--
+CREATE TABLE "library_message" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "text" varchar(200) NOT NULL);
+--
+-- Create model Reservation
+--
+CREATE TABLE "library_reservation" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "start_date" datetime NOT NULL, "expiration_date" datetime NOT NULL, "book_id_id" integer NOT NULL REFERENCES "library_book" ("id"), "user_id_id" integer NOT NULL REFERENCES "auth_user" ("id"));
+--
+-- Create model Users_Messages
+--
+CREATE TABLE "library_users_messages" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "message_id_id" integer NOT NULL REFERENCES "library_message" ("id"), "user_id_id" integer NOT NULL REFERENCES "auth_user" ("id"));
+CREATE INDEX "library_book_4f331e2f" ON "library_book" ("author_id");
+CREATE INDEX "library_lease_f7673a87" ON "library_lease" ("book_id_id");
+CREATE INDEX "library_lease_18624dd3" ON "library_lease" ("user_id_id");
+CREATE INDEX "library_reservation_f7673a87" ON "library_reservation" ("book_id_id");
+CREATE INDEX "library_reservation_18624dd3" ON "library_reservation" ("user_id_id");
+CREATE INDEX "library_users_messages_b872858c" ON "library_users_messages" ("message_id_id");
+CREATE INDEX "library_users_messages_18624dd3" ON "library_users_messages" ("user_id_id");
+COMMIT;

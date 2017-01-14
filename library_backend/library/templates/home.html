@@ -21,10 +21,10 @@
 			<div class="fifthR" id="user-info-div">
 				<div id="user-info">
 					Welcome!<br>
-					<h3>Genovefa</h3>
+					<h3>{{user.first_name}}</h3>
 				</div>
 				<div id="profile-picture-div">
-					<img id="profile-picture" alt="Your profile picture!" src="{% static 'library/pics/profilePicture.jpg' %}"/>
+					<img id="profile-picture" alt="Your profile picture!" src="{% static 'library/pics/'|add:user.username|add:'.jpg' %}"/>
 				</div>								
 			</div>
 		</div>

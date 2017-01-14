@@ -53,13 +53,23 @@ def index(request):
 def updateBookStatus(book_id):
 	book = Book.objects.get(id=book_id)
 	if not book.available:
-		book_reservation = Reservation(book_id=book_id).objects
-		book_lease=Lease(book_id=book_id).objects
-		if book_lease and book_lease.is_expired():
+		book_reservation = Reservation.objects.filter(book_id=book)
+		book_lease = Lease.objects.filter(book_id=book)
+		reserved=False
+		leased=False
+		if book_reservation.count() > 0:
+			for reservation in book_reservation:
+				if not reservation.is_expired():
+					reserved=True
+		if book_lease.count() > 0:
+			for lease in book_lease:
+				if not lease.is_expired():
+					leased=True
+
+		if reserved or leased:
+			book.available=False
+		else:
 			book.available=True
-		if book_reservation and book_reservation.is_expired():
-			book.available = True
-			#delete expired reservation
 		book.save()
 
 @user_passes_test(isLibrarian,login_url='/library/')
@@ -85,6 +95,8 @@ def books(request):
 	if request.method=='GET':
 		template=loader.get_template('books.html')
 		books_list = Book.objects.all()
+		for book in books_list:
+			updateBookStatus(book.id)
 		if user.groups.filter(name='Librarian').exists():
 			role='Librarian'
 		elif user.groups.filter(name='User').exists():
@@ -143,7 +155,7 @@ def reserve(request,book_id):
 			book.available=False
 			book.save()
 			#Reservation successful
-			return HttpResponseRedirect(reverse('/library/books'))
+			return HttpResponseRedirect('/library/books')
 
 @login_required(login_url='/library/')
 def lease(request):
