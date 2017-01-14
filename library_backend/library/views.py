@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import user_passes_test
 import logging
 # Create your views here.
 from .models import Book,Lease,Author,User,Reservation
-from .forms import LoginForm
+from .forms import LoginForm,NewBookForm,NewLeaseForm
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
@@ -76,7 +76,7 @@ def updateBookStatus(book_id):
 def newBook(request):
 	if request.method=='POST':
 		book_title=request.POST['title']
-		book_author=request.POST['author']
+		book_author=Author.objects.get(id=request.POST['author'])
 		book_genre=request.POST['genre']
 		book = Book(title=book_title,author=book_author,genre=book_genre)
 		logger.info("Attempting to save new book(title='",book_title,"', author='",book_author,"', genre='",book_genre,"'")
@@ -86,8 +86,12 @@ def newBook(request):
 		#return HttpResponseRedirect(reverse('/library/books'))
 		return HttpResponseRedirect('/library/books')
 	if request.method=='GET':
+		newBookForm=NewBookForm()
 		template = loader.get_template('newBook.html')
-		return HttpResponse(template.render())
+		context = {
+			"form": newBookForm
+		}
+		return HttpResponse(template.render(context))
 
 @login_required(login_url='/library/')
 def books(request):
@@ -161,20 +165,25 @@ def reserve(request,book_id):
 def lease(request):
 	user = request.user
 	if request.method=='POST':
-		book_id = request.POST['id']
-		user_id = request.POST['id']
+		book_id = request.POST['book']
+		user_id = request.POST['user']
 		updateBookStatus(book_id)
 		book = Book.objects.get(id=book_id)
+		user=User.objects.get(id=user_id)
 		if book.available:
-			reservation = Reservation(user_id=user_id,book_id=book)
+			reservation = Reservation(user_id=user,book_id=book)
 			reservation.save()
 			book.available=False
 			book.save()
 			#Reservation successful
-			return HttpResponseRedirect(reverse('/library/leases'))
+			return HttpResponseRedirect('/library/leases')
 	if request.method == 'GET':
 		template = loader.get_template('newLease.html')
-		return HttpResponse(template.render())
+		newLeaseForm = NewLeaseForm()
+		context={
+			'form': newLeaseForm
+		}
+		return HttpResponse(template.render(context))
 
 '''def lease(request,book_id):
 	if request.method=='POST':

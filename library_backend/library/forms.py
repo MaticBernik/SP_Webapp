@@ -12,11 +12,12 @@ class LoginForm(forms.Form):
   username = forms.CharField(label='Username:', max_length=100) #id="usernameField"
   password = forms.CharField(max_length=100, widget=forms.PasswordInput) #id="passwordField"
 '''
-class newBookForm(forms.Form):
+class NewBookForm(forms.Form):
   title = forms.CharField(label='Title:', max_length=100)
-  author = forms.ChoiceField(label='Author', choices=[(x.firstName,x.lastName) for x in Author.objects.all()])
+  #author = forms.ChoiceField(label='Author', choices=[x.firstName+" "+x.lastName for x in Author.objects.all()])
+  author = forms.ModelChoiceField(label='Author', queryset=Author.objects.all())
   genre = forms.CharField(label='Genres:', max_length=100)
 
-class newLeaseForm(forms.Form):
-  user = forms.ChoiceField(label='User', choices=[(x.first_name,x.last_name) for x in User.objects.all()])
-  book = forms.ChoiceField(label='Book', choices=[(x.title) for x in Book.objects.all()])
+class NewLeaseForm(forms.Form):
+  user = forms.ModelChoiceField(label='user', queryset=User.objects.all())
+  book = forms.ModelChoiceField(label='book', queryset=Book.objects.all())

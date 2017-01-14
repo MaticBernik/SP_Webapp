@@ -63,9 +63,11 @@
 			{% endif %}
 		</table>
         <br>
-		<a onclick="return popitup('/library/books/add')">
-        	<button class="tableButton" id="newBookButton">+New book</button>
-		</a>
+		{% if role == 'Librarian' %}
+			<a onclick="return popitup('library/books/add/')">
+				<button class="tableButton" id="newBookButton">+New book</button>
+			</a>
+		{% endif %}
 	</div>
 	<div class="fifthR" id="sidebar">
 		<div id="menu">
