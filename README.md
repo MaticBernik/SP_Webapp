@@ -2,7 +2,7 @@ Library
 ========
 
 About
------
+------
 
 Application is meant to help owner keep track of lent items.
 It also gives other users an overview of items, that they can borrow at time. 
