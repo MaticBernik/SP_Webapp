@@ -13,7 +13,10 @@ urlpatterns = [
     url(r'home/$',views.home,name="home"),
     url(r'users/$',views.users,name="users"),
     url(r'leases/$',views.leases,name="leases"),
+    url(r'leases/add/$', views.lease, name="newLease"),
+    url(r'books/lease/(?P<book_id>[0-9]+)/$',views.lease,name="lease"),
     url(r'books/reserve/(?P<book_id>[0-9]+)/$',views.reserve,name="reserve"),
+    url(r'books/add/$',views.newBook,name="newBook"),
     url(r'^register/', CreateView.as_view(
             template_name='register.html',
             form_class=UserCreationForm,

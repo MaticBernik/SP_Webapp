@@ -1,0 +1,21 @@
+
+ustvari newBook in newLease formo
+[OK] popravi avtentikacijo
+[OK] ACL - uredi avtorizacijo (anotacije nad metodami?)
+implememntiraj logging
+
+testriranje,profiliranje in zvezna integracija
+zgeneriraj dokumentacijo (sphinx)
+
+popravi izgled form
+logout
+prevedi aplikacijo - dodaten jezik
+
+preveri, kje (v bazi/config datoteki) se nastavlja salt za gesla
+ponovno zgeneriraj SQL create skripte z sqlmigrate
+ponovno zgeneriraj strukturo tabel baze z DjangoGraphviz
+
+ 
+pop-up obvestila o uspesnosti dodajanja novih objektov
+
+V models dodajtabelo obvestila

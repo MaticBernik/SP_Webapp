@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library</title>
+</head>
+<body>
+    <form id="newLease-form"  method="post" action="/library/leases/add">
+        {% csrf_token %}
+        {{ newLeaseForm }}<br>
+        <input id="newLeaseButton" type="submit" value="add"/>
+    </form>
+</body>
+</html>

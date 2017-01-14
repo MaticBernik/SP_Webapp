@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<title>Library</title>
 	<link rel="stylesheet" type="text/css" href="{% static 'library/styles.css' %}">
+	<script type="text/javascript" src="{% static 'library/scripts.js' %}" defer></script>
 </head>
 <body>
 <div id="div-top">
@@ -64,7 +65,9 @@
 			{% endif %}
 		</table>
         <br>
-        <button class="tableButton" id="newLeaseButton">+New lease</button>
+		<a onclick="return popitup('/library/leases/add')">
+        	<button class="tableButton" id="newLeaseButton">+New lease</button>
+		</a>
 	</div>
 	<div class="fifthR" id="sidebar">
 		<div id="menu">
