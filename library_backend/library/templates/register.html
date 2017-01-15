@@ -9,16 +9,18 @@
 <body>
 <div id="login-div">
     <div id="login-div-left">
-        <form id="registration-form" action="." method="post">
+        <form id="registration-form" action="/library/register/" method="post">
 		    {% csrf_token %}
-            First name:<br>
-            <input type="text" name="firstName"/><br>
-            Last name:<br>
-            <input type="text" name="lastName"/><br>
-            Address:<br>
-            <input type="text" name="address"/><br>
-            <br>
-            {{form}}
+            {% comment %}
+                First name:<br>
+                <input type="text" name="firstName"/><br>
+                Last name:<br>
+                <input type="text" name="lastName"/><br>
+                Address:<br>
+                <input type="text" name="address"/><br>
+                <br>
+            {% endcomment %}
+            {{userform}}
             <input type="submit" value="Register"/>
         </form>
     </div>

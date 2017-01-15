@@ -59,8 +59,8 @@
 							</td>
 						{% elif role == 'User' %}
 							<td>
-								<form id="reserveForm{{book.id}}" action="reserve/{{book.id}}/" method="post">
-									<input id="reserveButton{{book.id}}" type="submit" value="Reserve" {% if not book.available %}disabled{% endif %}/>
+								<form id="reserveForm{{book.id}}" action="reserve/{{book.id}}/"  method="post">
+									<input id="reserveButton{{book.id}}" type="submit" name="reserve{{book.title}}" value="Reserve" {% if not book.available %}disabled{% endif %}/>
 								</form>
 							</td>
 						{% endif %}

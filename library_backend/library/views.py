@@ -6,11 +6,13 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import user_passes_test
+from django.shortcuts import render
+from django.template import RequestContext
 # import the logging library
 import logging
 # Create your views here.
-from .models import Book,Lease,Author,User,Reservation
-from .forms import LoginForm,NewBookForm,NewLeaseForm
+from .models import Book,Lease,Author,User,Reservation,Group
+from .forms import LoginForm,NewBookForm,NewLeaseForm,UserForm,UserCreationForm
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
@@ -39,7 +41,11 @@ def index(request):
 	elif request.method=='POST':
 		form = LoginForm(request.POST)
 		if form.is_valid():
-			user = authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password'] )
+			username = form.cleaned_data['username']
+			password = form.cleaned_data['password']
+			user = authenticate(username=username, password=password )
+			logger.info('Login: ',username)
+			print('Login: ',username)
 			if user is not None:
 				login(request, user)
 				if user.groups.filter(name='Librarian').exists():
@@ -49,6 +55,10 @@ def index(request):
 			else:
 				logger.error("Unsuccessful user authentication.")
 				return HttpResponseRedirect('/library/')  # POSLJI ZRAVEN SE SPOROCILO
+		else:
+			logger.error("Form not valid!")
+			print("FORM NOT VALID!!")
+			return HttpResponseRedirect('/library/')
 
 def updateBookStatus(book_id):
 	book = Book.objects.get(id=book_id)
@@ -218,8 +228,21 @@ def removeBook(request,book_id):
 	if request.method=='GET':p
 		template=loader.get_template('register.html')
 		return HttpResponse(template.render())
-	elif request.method=='POST':
-'''
+	elif request.method=='POST':'''
+
+def register(request):
+	if request.method == 'POST':
+		#uf = UserForm(request.POST, prefix='user')
+		uf = UserCreationForm(request.POST, prefix='user')
+		if uf.is_valid():
+			user = uf.save()
+			g = Group.objects.get(name='User')
+			g.user_set.add(user)
+			return HttpResponseRedirect('/library')
+	else:
+		#uf = UserForm(prefix='user')
+		uf= UserCreationForm(prefix='user')
+	return render(request, 'register.html', dict(userform=uf))
 
 '''
 def login(request):
@@ -236,6 +259,7 @@ def login(request):
 			return HttpResponseRedirect('/library/') #POSLJI ZRAVEN SE SPOROCILO
 '''
 
+@login_required(login_url='/library/')
 def logout_user(request):
 	logout(request)
-	return HttpResponseRedirect('index')
+	return HttpResponseRedirect(reverse('index'))
