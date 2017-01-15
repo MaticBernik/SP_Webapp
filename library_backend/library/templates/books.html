@@ -23,9 +23,11 @@
 			Welcome!<br>
 			<h3>{{user.first_name}}</h3>
 		</div>
-		<div id="profile-picture-div">
-			<img id="profile-picture" alt="Your profile picture!" src="{% static 'library/pics/'|add:user.username|add:'.jpg' %}"/>
-		</div>
+		<a href="/library/logout">
+			<div id="profile-picture-div" >
+					<img id="profile-picture" alt="Your profile picture!" src="{% static 'library/pics/'|add:user.username|add:'.jpg' %}"/>
+			</div>
+		</a>
 	</div>
 </div>
 <div id="div-bottom">
@@ -37,7 +39,7 @@
 				<th>author</th>
 				<th>status</th>
 				{% if role == 'Librarian' %}
-					<th>active?</th>
+					<th>delete</th>
 				{% elif role == 'User' %}
 					<th>reservation</th>
 				{% endif %}
@@ -50,7 +52,11 @@
 						<td>{{book.author.firstName}} {{book.author.lastName}}</td>
 						<td>{% if book.available %} available {% else %} leased or reserved {% endif %}</td>
 						{% if role == 'Librarian' %}
-							<td><input id="cb2" type="checkbox" checked="checked"></td>
+							<td>
+								<form id="deleteForm{{book.id}}" action="remove/{{book.id}}/" method="post">
+									<input id="deleteButton{{book.id}}" name="delete{{book.title}}" type="submit" value="Delete" />
+								</form>
+							</td>
 						{% elif role == 'User' %}
 							<td>
 								<form id="reserveForm{{book.id}}" action="reserve/{{book.id}}/" method="post">
@@ -64,7 +70,7 @@
 		</table>
         <br>
 		{% if role == 'Librarian' %}
-			<a onclick="return popitup('library/books/add/')">
+			<a onclick="return popitup('library/books/add/', name='newBookWindow')">
 				<button class="tableButton" id="newBookButton">+New book</button>
 			</a>
 		{% endif %}

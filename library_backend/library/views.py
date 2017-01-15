@@ -171,8 +171,8 @@ def lease(request):
 		book = Book.objects.get(id=book_id)
 		user=User.objects.get(id=user_id)
 		if book.available:
-			reservation = Reservation(user_id=user,book_id=book)
-			reservation.save()
+			lease = Lease(user_id=user,book_id=book)
+			lease.save()
 			book.available=False
 			book.save()
 			#Reservation successful
@@ -184,6 +184,18 @@ def lease(request):
 			'form': newLeaseForm
 		}
 		return HttpResponse(template.render(context))
+
+@user_passes_test(isLibrarian,login_url='/library/')
+def removeLease(request,lease_id):
+	lease = Lease.objects.get(id=lease_id)
+	lease.delete()
+	return HttpResponseRedirect('/library/leases')
+
+@user_passes_test(isLibrarian,login_url='/library/')
+def removeBook(request,book_id):
+	book = Book.objects.get(id=book_id)
+	book.delete()
+	return HttpResponseRedirect('/library/books')
 
 '''def lease(request,book_id):
 	if request.method=='POST':
@@ -224,6 +236,6 @@ def login(request):
 			return HttpResponseRedirect('/library/') #POSLJI ZRAVEN SE SPOROCILO
 '''
 
-'''def logout_user(request):
+def logout_user(request):
 	logout(request)
-	return HttpResponseRedirect(reverse('index'))'''
+	return HttpResponseRedirect('index')

@@ -23,9 +23,11 @@
 			Welcome!<br>
 			<h3>{{user.first_name}}</h3>
 		</div>
-		<div id="profile-picture-div">
-			<img id="profile-picture" alt="Your profile picture!" src="{% static 'library/pics/'|add:user.username|add:'.jpg' %}"/>
-		</div>
+		<a href="/library/logout">
+			<div id="profile-picture-div">
+				<img id="profile-picture" alt="Your profile picture!" src="{% static 'library/pics/'|add:user.username|add:'.jpg' %}"/>
+			</div>
+		</a>
 	</div>
 </div>
 <div id="div-bottom">
@@ -39,6 +41,7 @@
 					<th>start date</th>
 					<th>expiration date</th>
 					<th>active?</th>
+					<th>delete</th>
 				{% elif role == 'User' %}
 					<th>book</th>
 					<th>expiration date</th>
@@ -54,7 +57,12 @@
 							<td>{{lease.book_id.id}} {{lease.book_id.author}}: {{lease.book_id.title}}</td>
 							<td>{{lease.start_date}}</td>
 							<td>{{lease.expiration_date}}</td>
-							<td><input id="ls1" type="checkbox" {% if not lease.is_expired %}checked{% endif %}></td>
+							<td><input id="ls1" type="checkbox" {% if not lease.is_expired %}checked{% endif %} disabled></td>
+							<td>
+								<form id="deleteForm{{lease.id}}" action="remove/{{lease.id}}/" method="post">
+									<input id="deleteButton{{lease.id}}" name="delete{{lease.book_id.title}}" type="submit" value="Delete" />
+								</form>
+							</td>
 						{% elif role == 'User' %}
 							<td>{{lease.book_id.id}} {{lease.book_id.author}}: {{lease.book_id.title}}</td>
 							<td>{{lease.expiration_date}}</td>
@@ -65,7 +73,7 @@
 			{% endif %}
 		</table>
         <br>
-		<a onclick="return popitup('/library/leases/add')">
+		<a onclick="return popitup('/library/leases/add',name='newLeaseWindow')">
         	<button class="tableButton" id="newLeaseButton">+New lease</button>
 		</a>
 	</div>

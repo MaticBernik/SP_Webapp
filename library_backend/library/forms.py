@@ -20,4 +20,4 @@ class NewBookForm(forms.Form):
 
 class NewLeaseForm(forms.Form):
   user = forms.ModelChoiceField(label='user', queryset=User.objects.all())
-  book = forms.ModelChoiceField(label='book', queryset=Book.objects.all())
+  book = forms.ModelChoiceField(label='book', queryset=Book.objects.filter(available=True))

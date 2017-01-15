@@ -4,10 +4,14 @@
     <list default="true" id="150ad374-1ef3-4cc7-b6fa-5b15b316ebb0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_backend/db.sqlite3" afterPath="$PROJECT_DIR$/library_backend/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_backend/TO-DO" afterPath="$PROJECT_DIR$/library_backend/TO-DO" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_backend/library/forms.py" afterPath="$PROJECT_DIR$/library_backend/library/forms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_backend/library/static/library/scripts.js" afterPath="$PROJECT_DIR$/library_backend/library/static/library/scripts.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_backend/library/templates/books.html" afterPath="$PROJECT_DIR$/library_backend/library/templates/books.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_backend/library/templates/newBook.html" afterPath="$PROJECT_DIR$/library_backend/library/templates/newBook.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_backend/library/templates/newLease.html" afterPath="$PROJECT_DIR$/library_backend/library/templates/newLease.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_backend/library/templates/home.html" afterPath="$PROJECT_DIR$/library_backend/library/templates/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_backend/library/templates/leases.html" afterPath="$PROJECT_DIR$/library_backend/library/templates/leases.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_backend/library/templates/users.html" afterPath="$PROJECT_DIR$/library_backend/library/templates/users.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_backend/library/urls.py" afterPath="$PROJECT_DIR$/library_backend/library/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_backend/library/views.py" afterPath="$PROJECT_DIR$/library_backend/library/views.py" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -33,8 +37,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/library_backend/library/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="824">
-              <caret line="172" column="26" selection-start-line="172" selection-start-column="26" selection-end-line="172" selection-end-column="26" />
+            <state relative-caret-position="1123">
+              <caret line="239" column="19" selection-start-line="239" selection-start-column="19" selection-end-line="239" selection-end-column="19" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -45,8 +49,18 @@
       <file leaf-file-name="newBook.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/library_backend/library/templates/newBook.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="70" selection-start-line="7" selection-start-column="70" selection-end-line="7" selection-end-column="70" />
+            <state relative-caret-position="210">
+              <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scripts.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library_backend/library/static/library/scripts.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -62,31 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/library_backend/library/templates/register.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="78" selection-start-line="6" selection-start-column="78" selection-end-line="6" selection-end-column="78" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/library_backend/library/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/library_backend/library/templates/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+            <state relative-caret-position="195">
+              <caret line="19" column="53" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -95,18 +89,18 @@
       <file leaf-file-name="books.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/library_backend/library/templates/books.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1035">
-              <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+            <state relative-caret-position="375">
+              <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/library_backend/library/forms.py">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library_backend/library/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
+            <state relative-caret-position="435">
+              <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -115,8 +109,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/library_backend/library/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+            <state relative-caret-position="356">
+              <caret line="28" column="13" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="13" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -127,8 +121,18 @@
       <file leaf-file-name="leases.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/library_backend/library/templates/leases.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="128" selection-start-line="26" selection-start-column="128" selection-end-line="26" selection-end-column="128" />
+            <state relative-caret-position="435">
+              <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="users.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library_backend/library/templates/users.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -175,22 +179,22 @@
         <option value="$PROJECT_DIR$/library_backend/library/templates/leases-librarian.html" />
         <option value="$PROJECT_DIR$/library_backend/library/static/library/styles.css" />
         <option value="$PROJECT_DIR$/library_backend/library/templates/library/newBook.html" />
-        <option value="$PROJECT_DIR$/library_backend/library/static/library/scripts.js" />
         <option value="$PROJECT_DIR$/library_backend/library/tests.py" />
         <option value="$PROJECT_DIR$/library_backend/library/tests_model.py" />
         <option value="$PROJECT_DIR$/library_backend/library/tests_views.py" />
         <option value="$PROJECT_DIR$/library_backend/library/templates/login.html" />
         <option value="$PROJECT_DIR$/library_backend/library/templates/register.html" />
-        <option value="$PROJECT_DIR$/library_backend/library/templates/users.html" />
-        <option value="$PROJECT_DIR$/library_backend/library/templates/home.html" />
-        <option value="$PROJECT_DIR$/library_backend/library/templates/leases.html" />
         <option value="$PROJECT_DIR$/library_backend/library/admin.py" />
         <option value="$PROJECT_DIR$/library_backend/library/models.py" />
-        <option value="$PROJECT_DIR$/library_backend/library/urls.py" />
-        <option value="$PROJECT_DIR$/library_backend/library/templates/books.html" />
         <option value="$PROJECT_DIR$/library_backend/library/templates/newBook.html" />
         <option value="$PROJECT_DIR$/library_backend/library/templates/newLease.html" />
         <option value="$PROJECT_DIR$/library_backend/library/forms.py" />
+        <option value="$PROJECT_DIR$/library_backend/library/static/library/scripts.js" />
+        <option value="$PROJECT_DIR$/library_backend/library/urls.py" />
+        <option value="$PROJECT_DIR$/library_backend/library/templates/books.html" />
+        <option value="$PROJECT_DIR$/library_backend/library/templates/home.html" />
+        <option value="$PROJECT_DIR$/library_backend/library/templates/leases.html" />
+        <option value="$PROJECT_DIR$/library_backend/library/templates/users.html" />
         <option value="$PROJECT_DIR$/library_backend/library/views.py" />
       </list>
     </option>
@@ -204,7 +208,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="1280" />
     <option name="y" value="28" />
-    <option name="width" value="1256" />
+    <option name="width" value="1280" />
     <option name="height" value="1412" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -232,6 +236,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -333,7 +338,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -582,10 +586,10 @@
     <option name="totallyTimeSpent" value="56359000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="28" width="1256" height="1412" extended-state="0" />
+    <frame x="1280" y="28" width="1280" height="1412" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2814992" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27621284" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -802,13 +806,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/library_backend/library/templates/library/newBook.html" />
-    <entry file="file://$PROJECT_DIR$/library_backend/library/static/library/scripts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library_backend/library/tests_model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -837,37 +834,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library_backend/library/templates/users.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="73" selection-start-line="26" selection-start-column="73" selection-end-line="26" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library_backend/library/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library_backend/library/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="99" selection-start-line="26" selection-start-column="79" selection-end-line="26" selection-end-column="136" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library_backend/library/templates/leases.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="128" selection-start-line="26" selection-start-column="128" selection-end-line="26" selection-end-column="128" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -879,16 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library_backend/library/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library_backend/library/templates/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -897,26 +860,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library_backend/library/urls.py">
+    <entry file="file://$PROJECT_DIR$/library_backend/library/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library_backend/library/templates/books.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1035">
-          <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="315">
+          <caret line="22" column="74" selection-start-line="22" selection-start-column="74" selection-end-line="22" selection-end-column="74" />
+          <folding>
+            <marker date="1484440725606" expanded="true" signature="1056:1223" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/library_backend/library/templates/newBook.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="70" selection-start-line="7" selection-start-column="70" selection-end-line="7" selection-end-column="70" />
+        <state relative-caret-position="210">
+          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library_backend/library/static/library/scripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -929,18 +894,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library_backend/library/forms.py">
+    <entry file="file://$PROJECT_DIR$/library_backend/library/templates/books.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
+        <state relative-caret-position="375">
+          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library_backend/library/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library_backend/library/templates/leases.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library_backend/library/templates/users.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library_backend/library/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library_backend/library/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="19" column="53" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/library_backend/library/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="824">
-          <caret line="172" column="26" selection-start-line="172" selection-start-column="26" selection-end-line="172" selection-end-column="26" />
+        <state relative-caret-position="1123">
+          <caret line="239" column="19" selection-start-line="239" selection-start-column="19" selection-end-line="239" selection-end-column="19" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>

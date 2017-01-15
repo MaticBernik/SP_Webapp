@@ -23,9 +23,11 @@
 			Welcome!<br>
 			<h3>{{user.first_name}}</h3>
 		</div>
-		<div id="profile-picture-div">
-			<img id="profile-picture" alt="Your profile picture!" src="{% static 'library/pics/'|add:user.username|add:'.jpg' %}"/>
-		</div>
+		<a href="/library/logout">
+			<div id="profile-picture-div">
+				<img id="profile-picture" alt="Your profile picture!" src="{% static 'library/pics/'|add:user.username|add:'.jpg' %}"/>
+			</div>
+		</a>
 	</div>
 </div>
 <div id="div-bottom">

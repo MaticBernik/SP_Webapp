@@ -1,12 +1,12 @@
 
-ustvari newBook in newLease formo
+[OK] ustvari newBook in newLease formo
 [OK] popravi avtentikacijo
 [OK] ACL - uredi avtorizacijo (anotacije nad metodami?)
 implememntiraj logging
 
 testriranje,profiliranje in zvezna integracija
 zgeneriraj dokumentacijo (sphinx)
-jenkins - dodaj skripto, ki bo po vsakem buildu naredila minify CSS in JS datotek
+[OK] jenkins - dodaj skripto, ki bo po vsakem buildu naredila minify CSS in JS datotek
 
 popravi izgled form
 logout
@@ -19,4 +19,4 @@ preveri, kje (v bazi/config datoteki) se nastavlja salt za gesla
  
 pop-up obvestila o uspesnosti dodajanja novih objektov
 
-V models dodajtabelo obvestila
+[OK] V models dodajtabelo obvestila
