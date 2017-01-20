@@ -25,7 +25,7 @@ class viewsMethodsTest(TestCase):
         request.path='/library/books/add'
         request.method='POST'
         request.POST['title']=title
-        request.POST['author']=author
+        request.POST['author']=author.id
         request.POST['genre']=genre
         newBook(request)
         self.assertIs(Book.objects.filter(title=title,author=author,genre=genre).exists(),True)

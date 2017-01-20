@@ -87,6 +87,9 @@ def newBook(request):
 	if request.method=='POST':
 		book_title=request.POST['title']
 		book_author=Author.objects.get(id=request.POST['author'])
+		#### JIT change ####
+
+		####
 		book_genre=request.POST['genre']
 		book = Book(title=book_title,author=book_author,genre=book_genre)
 		logger.info("Attempting to save new book(title='",book_title,"', author='",book_author,"', genre='",book_genre,"'")
